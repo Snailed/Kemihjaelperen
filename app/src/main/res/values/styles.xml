@@ -1,0 +1,17 @@
+<resources>
+    <color name="white_opaque">#e6ffe6</color>
+
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+
+
+    </style>
+    <style name="UdenTitleBar" parent="AppTheme">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+</resources>
