@@ -9,20 +9,20 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-public class Intro extends Activity implements View.OnClickListener {
-    private Button beregnerknap;
+public class BeregnerMenu extends Activity implements View.OnClickListener {
+    private Button stofmængdeBeregner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.intro);
-        beregnerknap = (Button) findViewById(R.id.buttonBeregner);
-        beregnerknap.setOnClickListener(this);
+        setContentView(R.layout.activity_beregner_menu);
+        stofmængdeBeregner = (Button) findViewById(R.id.buttonStofmængdeberegner);
+        stofmængdeBeregner.setOnClickListener(this);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_intro, menu);
+        getMenuInflater().inflate(R.menu.menu_beregner_menu, menu);
         return true;
     }
 
@@ -40,10 +40,8 @@ public class Intro extends Activity implements View.OnClickListener {
 
         return super.onOptionsItemSelected(item);
     }
-
-    @Override
     public void onClick(View v) {
-        if (v == beregnerknap) {
+        if (v == stofmængdeBeregner) {
             Intent i = new Intent(this, BeregnerMenu.class);
             startActivity(i);
         }

@@ -17,7 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Beregner"
-        android:id="@+id/button"
+        android:id="@+id/buttonBeregner"
         android:layout_below="@+id/textViewTitel"
         android:layout_marginTop="41dp"
         android:layout_alignParentRight="true"
