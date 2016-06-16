@@ -5,13 +5,27 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.webkit.WebView;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-public class Stofmaengdeberegner extends Activity {
-
+public class Stofmaengdeberegner extends Activity implements View.OnClickListener {
+    private EditText masse;
+    private EditText molarmasse;
+    private TextView stofmængde;
+    private Button beregn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stofmaengdeberegner);
+        masse = (EditText) findViewById(R.id.editTextStofmængdeMasse);
+        molarmasse = (EditText) findViewById(R.id.editTextStofmængdeMolarmasse);
+        stofmængde = (TextView) findViewById(R.id.textViewStofmængdeResultat);
+        beregn = (Button) findViewById(R.id.buttonStofmængdeBeregn);
+        beregn.setOnClickListener(this);
     }
 
     @Override
@@ -34,5 +48,12 @@ public class Stofmaengdeberegner extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View v) {
+        double m = Double.parseDouble(masse.getText().toString());
+        double molar = Double.parseDouble(molarmasse.getText().toString());
+        stofmængde.setText("n = "+(m/molar)+" mol");
     }
 }
